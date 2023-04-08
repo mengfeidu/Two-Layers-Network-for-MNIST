@@ -11,7 +11,7 @@ This is a homework of DATA620004 Netural Network and Deep Learning(2023) in the 
 * If you need to train the network from the beginning, please download the MNIST dataset into the directory **data**.
 * If you need to load the trained model and validate the performance , you can directly run the python file **main.py** following the guide bellow.
 
-* For train the network from the beginning, please run the code:
+* For training the network from the beginning, please run the code in **main.py**:
     ```python
     ## training and save
     best_model, train_loss, test_loss, test_acc = train(nn, loss, train_dataloader, test_dataloader, batch_size=16, epoch=150, lr_start=0.001, momentum=0.9, regularization=0.001, lr_decay=0.001)
@@ -31,6 +31,27 @@ This is a homework of DATA620004 Netural Network and Deep Learning(2023) in the 
     np.save('loss_batch16_epoch150.npy',loss_dict)
     ##
     ```
+* For loading trained model and validating the performance please run the code in **main.py**:  
+    ```python
+    # load model and test
+    nn.load('models\model_dict_batch16_epoch100_decay001.npy')
+    test_acc,_ = test(nn, dataloader=test_dataloader, batch_size=10000, loss_function=loss)
+    ##
+    ```
+* For visulizing the loss curve, please run the code in **main.py**:  
+    ```python
+   # loss visualize
+    data_loss = np.load('loss\loss_batch16_epoch100_decay001.npy',allow_pickle=True).item()
+    plot_acc_loss(data_loss['train_loss'], data_loss['test_loss'], data_loss['test_acc'])
+    ##
+    ```
+* For visulizing the parameters of a specific layer, please run the code in **main.py** and choose the layer type (hidden layer or output layer) and layer index:  
+    ```python
+   # parameter visualize
+    svd_visual1('models\model_dict_batch16_epoch100_decay001.npy', 'hidden_layer', 1, is_svd=False)
+    ##
+    ```
+
 
 ## Performance 
 ### The performance of system1 
