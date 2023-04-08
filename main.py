@@ -84,32 +84,31 @@ if __name__ == '__main__':
     # nn = network(784,10,[784])
     ## loss function
     loss = Mse()
-    ## training and save
-    # best_model, train_loss, test_loss, test_acc = train(nn, loss, train_dataloader, test_dataloader, batch_size=16, epoch=150, lr_start=0.001, momentum=0.9, regularization=0.001, lr_decay=0.001)
-    # best_model.save('models\model_dict_batch16_epoch150_decay001.npy')
+#     # training and save
+#     best_model, train_loss, test_loss, test_acc = train(nn, loss, train_dataloader, test_dataloader, batch_size=16, epoch=150, lr_start=0.001, momentum=0.9, regularization=0.001, lr_decay=0.001)
+#     best_model.save('models\model_dict_batch16_epoch150_decay001.npy')
 
-    # # loss save
-    # loss_dict = {
-    #         'train_loss':train_loss,
-    #         'test_loss':test_loss,
-    #         'test_acc':test_acc,
-    #         'batch_size':16,
-    #         'lr':0.001,
-    #         'momentum':0.9,
-    #         'l2':0.001,
-    #         'lr_decay':0.001,
-    #     }
-    # np.save('loss_batch16_epoch150.npy',loss_dict)
+#     # loss save
+#     loss_dict = {
+#             'train_loss':train_loss,
+#             'test_loss':test_loss,
+#             'test_acc':test_acc,
+#             'batch_size':16,
+#             'lr':0.001,
+#             'momentum':0.9,
+#             'l2':0.001,
+#             'lr_decay':0.001,
+#         }
+#     np.save('loss_batch16_epoch150.npy',loss_dict)
     
     
     # load model and test
-    # nn.load('models\model_dict_batch16_epoch100_decay001.npy')
-    # test_acc,_ = test(nn, dataloader=test_dataloader, batch_size=10000, loss_function=loss)
+    nn.load('models\model_dict_batch16_epoch100_decay001.npy')
+    test_acc,_ = test(nn, dataloader=test_dataloader, batch_size=10000, loss_function=loss)
     
     # loss visualize
     # data_loss = np.load('loss\loss_batch16_epoch100_decay001.npy',allow_pickle=True).item()
     # plot_acc_loss(data_loss['train_loss'], data_loss['test_loss'], data_loss['test_acc'])
     
     # parameter visualize
-    svd_visual1('models\model_dict_batch16_epoch100_decay001.npy', 'hidden_layer', 1, is_svd=False)
-    a = 1
+    # svd_visual1('models\model_dict_batch16_epoch100_decay001.npy', 'hidden_layer', 1, is_svd=False)
