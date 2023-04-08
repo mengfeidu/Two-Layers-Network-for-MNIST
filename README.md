@@ -64,5 +64,9 @@ This is a homework of DATA620004 Netural Network and Deep Learning(2023) in the 
 ![Loss an Accuracy Curve](loss_plot/loss_plot.png)
 
 ## Parameter Visualization
-### Hidden Layer 0
-![](parameter_visualize/parameter_hiddenlayer0.png)
+### Hidden Layer 0 (784,784)
+![](parameter_visualize/parameter_hidden_layer0_plot.png)
+### Hidden Layer 1 (784,100)
+![](parameter_visualize/parameter_hidden_layer1_plot.png)
+### Output Layer (100,10)
+![](parameter_visualize/parameter_output_layer0_plot.png)
