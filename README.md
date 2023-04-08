@@ -28,7 +28,7 @@ This is a homework of DATA620004 Netural Network and Deep Learning(2023) in the 
             'l2':0.001,
             'lr_decay':0.001,
         }
-    np.save('loss_batch16_epoch150.npy',loss_dict)
+    np.save('loss\loss_batch16_epoch150_decay001.npy',loss_dict)
     ##
     ```
 * For loading trained model and validating the performance please run the code in **main.py**:  
@@ -59,3 +59,10 @@ This is a homework of DATA620004 Netural Network and Deep Learning(2023) in the 
 | --------   | -----  | ----  |
 | Model1     | **0.032** |   **0.976**     |
 | Model2     | 0.055 |  0.960    |
+
+## Loss an Accuracy Curve
+![Loss an Accuracy Curve](loss_plot/loss_plot.png)
+
+## Parameter Visualization
+### Hidden Layer 0
+![](parameter_visualize/parameter_hiddenlayer0.png)
